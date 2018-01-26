@@ -1,0 +1,313 @@
+﻿@model Clinical2018.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Pessoa</h4>
+<hr />
+
+<div class="table table-condensed">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentatikey" class="active"><a href="#Pessoa" aria-controls="Pessoa" role="tab" data-toggle="tab">Pessoa</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="Pessoa">
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PessoaID" />
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group" id="Tpo_Pessoa:div">
+                            <label asp-for="Tpo_Pessoa" class="control-label"></label>
+                            <select asp-for="Tpo_Pessoa" asp-items="Html.GetEnumSelectList<TipoPessoa>()" class="form-control" id="Tpo_Pessoa" ></select>
+                            <span asp-validation-for="Tpo_Pessoa" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Nome" class="control-label"></label>
+                            <input asp-for="Nome" class="form-control" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" title="PessoaJuridica">
+                            <label asp-for="NomeFantasia" class="control-label"></label>
+                            <input asp-for="NomeFantasia" class="form-control" />
+                            <span asp-validation-for="NomeFantasia" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CPF_CNPJ" class="control-label"></label>
+                            <input asp-for="CPF_CNPJ" class="form-control" id="CPF" />
+                            <span asp-validation-for="CPF_CNPJ" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="RG" class="control-label"></label>
+                            <input asp-for="RG" class="form-control" />
+                            <span asp-validation-for="RG" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" title="PessoaFisica">
+                            <label asp-for="RG_Emiss" class="control-label"></label>
+                            <input asp-for="RG_Emiss" class="form-control" />
+                            <span asp-validation-for="RG_Emiss" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" title="PessoaFisica">
+                            <label asp-for="Naturalidade" class="control-label"></label>
+                            <input asp-for="Naturalidade" class="form-control" />
+                            <span asp-validation-for="Naturalidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" title="PessoaFisica">
+                            <label asp-for="Nacionalidade" class="control-label"></label>
+                            <input asp-for="Nacionalidade" class="form-control" />
+                            <span asp-validation-for="Nacionalidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" title="PessoaFisica">
+                            <label asp-for="EstadoCivil" class="control-label"></label>
+                            <select asp-for="EstadoCivil" asp-items="Html.GetEnumSelectList<TipoEstadoCivil>()" class="form-control"></select>
+                            <span asp-validation-for="EstadoCivil" class="text-danger" />
+                        </div>
+                        <div class="form-group" title="PessoaFisica">
+                            <label asp-for="Sexo" class="control-label"></label>
+                            <select asp-for="Sexo" asp-items="Html.GetEnumSelectList<TipoSexo>()" class="form-control"></select>
+                            <span asp-validation-for="Sexo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Data_Alt" class="control-label"></label>
+                            <input asp-for="Data_Alt" class="form-control" />
+                            <span asp-validation-for="Data_Alt" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Data_Cad" class="control-label"></label>
+                            <input asp-for="Data_Cad" class="form-control" />
+                            <span asp-validation-for="Data_Cad" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Data_Nasc" class="control-label"></label>
+                            <input asp-for="Data_Nasc" class="form-control" />
+                            <span asp-validation-for="Data_Nasc" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EMail" class="control-label"></label>
+                            <input asp-for="EMail" class="form-control" />
+                            <span asp-validation-for="EMail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel" class="control-label"></label>
+                            <input asp-for="Tel" class="form-control" />
+                            <span asp-validation-for="Tel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel_Cel" class="control-label"></label>
+                            <input asp-for="Tel_Cel" class="form-control" />
+                            <span asp-validation-for="Tel_Cel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel_Cel_Mess" class="control-label"></label>
+                            <input asp-for="Tel_Cel_Mess" class="form-control" />
+                            <span asp-validation-for="Tel_Cel_Mess" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel_Comer" class="control-label"></label>
+                            <input asp-for="Tel_Comer" class="form-control" />
+                            <span asp-validation-for="Tel_Comer" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel_Comer_Mess" class="control-label"></label>
+                            <input asp-for="Tel_Comer_Mess" class="form-control" />
+                            <span asp-validation-for="Tel_Comer_Mess" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tel_Comer_Ramal" class="control-label"></label>
+                            <input asp-for="Tel_Comer_Ramal" class="form-control" />
+                            <span asp-validation-for="Tel_Comer_Ramal" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FotoRosto" class="control-label"></label>
+                            <input asp-for="FotoRosto" class="form-control" />
+                            <span asp-validation-for="FotoRosto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FotoRosto_Image" class="control-label"></label>
+                            <input asp-for="FotoRosto_Image" class="form-control" />
+                            <span asp-validation-for="FotoRosto_Image" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CEP" class="control-label"></label>
+                            <input asp-for="CEP" class="form-control" />
+                            <span asp-validation-for="CEP" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Logradouro_Tpo" class="control-label"></label>
+                            <input asp-for="Logradouro_Tpo" class="form-control" />
+                            <span asp-validation-for="Logradouro_Tpo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Logradouro" class="control-label"></label>
+                            <input asp-for="Logradouro" class="form-control" />
+                            <span asp-validation-for="Logradouro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Numero" class="control-label"></label>
+                            <input asp-for="Numero" class="form-control" />
+                            <span asp-validation-for="Numero" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Complemento" class="control-label"></label>
+                            <input asp-for="Complemento" class="form-control" />
+                            <span asp-validation-for="Complemento" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Bairro" class="control-label"></label>
+                            <input asp-for="Bairro" class="form-control" />
+                            <span asp-validation-for="Bairro" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Localidade" class="control-label"></label>
+                            <input asp-for="Localidade" class="form-control" />
+                            <span asp-validation-for="Localidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UF_SGL" class="control-label"></label>
+                            <input asp-for="UF_SGL" class="form-control" />
+                            <span asp-validation-for="UF_SGL" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LocalidadeID" class="control-label"></label>
+                            <input asp-for="LocalidadeID" class="form-control" />
+                            <span asp-validation-for="LocalidadeID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LogradouroID" class="control-label"></label>
+                            <input asp-for="LogradouroID" class="form-control" />
+                            <span asp-validation-for="LogradouroID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BairroID" class="control-label"></label>
+                            <input asp-for="BairroID" class="form-control" />
+                            <span asp-validation-for="BairroID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Logradouro_TpoID" class="control-label"></label>
+                            <input asp-for="Logradouro_TpoID" class="form-control" />
+                            <span asp-validation-for="Logradouro_TpoID" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <span class="control-label">Foto de Rosto</span>
+                            <input type="file" id="files" name="files[]" class="control-label" asp-for="FotoRosto" />
+                            @*<input asp-for="FotoRosto" id="FotoRosto"/>*@
+                            @*<input type="file" id="files" name="files[]" multiple />*@
+                        </div>
+                        <div class="form-group">
+                            <picture>
+                                <output id="list" class="control-label"></output>
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">Aba 2</div>
+        <div role="tabpanel" class="tab-pane" id="messages">Aba 3</div>
+        <div role="tabpanel" class="tab-pane" id="settings">Aba 4</div>
+
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="~/js/UploadArquivos.js"></script>
+<script src="~/js/funcoesGenericas.js"></script>
+<script src="~/js/jquery.maskedinput.min.js"></script>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="~/js/UploadArquivos.js"></script>
+    <script src="~/js/funcoesGenericas.js"></script>
+    <script src="~/js/jquery.maskedinput.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    //uploadFotoRosto
+    <script>
+        document.getElementById('files').addEventListener('change', uploadFotoRosto, false);
+        function uploadFotoRosto(evt) {
+
+            if (document.getElementById('a250574') != null) {
+                document.getElementById('a250574').remove()
+            }
+
+            handleFileSelect_OnePhoto(evt, 'a250574');
+        }
+    </script>
+
+    //Ações de acordo com o tipo de pessoa
+    <script>
+        $("#Tpo_Pessoa").change(function () {
+            TipoPessoaAcoes();
+        })
+        $(document).ready(function () {
+            TipoPessoaAcoes();
+        })
+
+        function TipoPessoaAcoes() {
+            var $vTpo_Pessoa = $("#Tpo_Pessoa").val();
+            var $vcpfcnpj = $("#CPF");
+
+
+            if ($vTpo_Pessoa == 2) {
+                $vcpfcnpj.unmask('000.000.000-00');
+                $vcpfcnpj.mask('99.999.999/9999-99');
+                ocultarDivsTitulo("PessoaFisica", "PessoaJuridica");
+            }
+            else {
+                alert($vTpo_Pessoa.toString());
+                $vcpfcnpj.unmask('00.000.000/0000-00');
+                $vcpfcnpj.mask('999.999.999-99');
+                ocultarDivsTitulo("PessoaJuridica", "PessoaFisica");
+            }
+        }
+    </script>
+
+    @*<script>
+            document.getElementById('Tpo_Pessoa').addEventListener('change', TipoPessoaAcoes, false);
+            document.getElementById('Tpo_Pessoa').addEventListener('ready', TipoPessoaAcoes, false);
+            $(document).ready(function () {
+                TipoPessoaAcoes();
+            })
+
+            function TipoPessoaAcoes() {
+                var $vTpo_Pessoa = $("#Tpo_Pessoa").val();
+                var $vcpfcnpj = $("#CPF");
+
+                //alert($vTpo_Pessoa.toString());
+
+                if ($vTpo_Pessoa == 2) {
+                    $vcpfcnpj.unmask('000.000.000-00');
+                    $vcpfcnpj.mask('99.999.999/9999-99');
+                    ocultarDivsTitulo("PessoaFisica", "PessoaJuridica");
+                }
+                else {
+                    $vcpfcnpj.unmask('00.000.000/0000-00');
+                    $vcpfcnpj.mask('999.999.999-99');
+                    ocultarDivsTitulo("PessoaJuridica", "PessoaFisica");
+                }
+            }
+        </script>*@
+
+}
+/**/
+/**/

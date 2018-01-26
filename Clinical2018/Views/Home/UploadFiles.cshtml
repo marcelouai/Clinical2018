@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-10">
+                <form asp-action="UploadFiles"
+                      asp-controller="Home"
+                      method="post"
+                      enctype="multipart/form-data">
+                    <input type="file" name="files" multiple />
+                    <input type="submit" value="Upload Selected Files" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
